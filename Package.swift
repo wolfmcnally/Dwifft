@@ -1,3 +1,4 @@
+// swift-tools-version:5.0
 import PackageDescription
 
 let package = Package(
@@ -5,13 +6,10 @@ let package = Package(
     platforms: [
         .iOS(.v9), .macOS(.v10_13), .tvOS(.v11)
     ],
-    dependencies : [],
-    exclude: [
-        "Carthage",
-        "DwifftTests",
-        "DwifftExample",
-        "docs",
-        "Dwifft.xcworkspace",
-        "scripts",
+    products: [
+        .library(name: "Dwifft", targets: ["Dwifft"])
+    ],
+    targets: [
+        .target(name: "Dwifft", path: "Dwifft")
     ]
 )
